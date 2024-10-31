@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Туризм в Україні</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background-color: #f0f0f5;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      background-color: #006699;
+      padding: 10px;
+    }
+
+    nav ul li {
+      position: relative;
+      margin-right: 20px;
+      color: #fff;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #004466;
+      border-radius: 5px;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      list-style: none;
+      top: 100%;
+      left: 0;
+      background-color: #004466;
+      border: 1px solid #ccc;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    nav li:hover .submenu {
+      display: block;
+    }
+
+    .submenu li a:hover {
+      background-color: #003355;
+      border-radius: 3px;
+    }
+
+    .fixed-button {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      z-index: 1000;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .image-container {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      height: 200px;
+      margin: 20px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      opacity: 0.5;
+      transition: opacity 0.5s;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .image-container:hover img {
+      opacity: 1;
+    }
+
+    .image-container:hover .overlay {
+      display: none;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 5px;
+      margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-container input {
+      border: none;
+      outline: none;
+      flex: 1;
+      padding: 5px;
+    }
+
+    .search-container button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+
+    /* Макет з використанням Grid */
+    .container {
+      display: grid;
+      grid-template-areas: 
+        "header header"
+        "main aside"
+        "footer footer";
+      gap: 10px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      grid-area: header;
+      background-color: #004466;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    main {
+      grid-area: main;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    aside {
+      grid-area: aside;
+      background-color: #e4e4e4;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: #004466;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-areas:
+          "header"
+          "main"
+          "aside"
+          "footer";
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#">Головна</a></li>
+      <li>
+        <a href="#">Міста</a>
+        <ul class="submenu">
+          <li><a href="#">Київ</a></li>
+          <li><a href="#">Львів</a></li>
+          <li><a href="#">Одеса</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Контакти</a></li>
+    </ul>
+  </nav>
+
+  <button class="fixed-button">Меню</button>
+
+  <div class="container">
+    <header>
+      <h1>Туризм в Україні</h1>
+      <p>Подорожуйте Україною, відкриваючи її унікальну красу</p>
+    </header>
+
+    <main>
+      <h2>Відкрийте для себе Україну</h2>
+      <p>Україна – це країна з багатою історією, різноманітною культурою і мальовничими пейзажами. Від Києва до Карпат, від Львова до Одеси – кожен куточок пропонує щось особливе.</p>
+      <p>Ви можете насолоджуватися стародавніми замками, чудовими горами, піщаними пляжами та смачними українськими стравами. Подорожуйте до Львова, щоб відчути атмосферу середньовічного міста, або відвідайте Київ – столицю з вражаючими архітектурними пам'ятками.</p>
+
+      <div class="image-container">
+        <img src="images/f78065ca6a7b414c8bae3fe78d46daf2j1d4mspdtceowbe_image.avif" alt="Карпати">
+        <div class="overlay">Чарівні Карпати</div>
+      </div>
+      
+
+      <div class="search-container">
+        <input type="text" placeholder="Пошук місць...">
+        <button>🔍</button>
+      </div>
+    </main>
+
+    <aside>
+      <h3>Корисна інформація</h3>
+      <p>🌄 <strong>Карпати</strong> – ідеальне місце для любителів гір та зимових видів спорту.</p>
+      <p>🏰 <strong>Замки Західної України</strong> – мандрівка в середньовіччя.</p>
+      <p>🏖️ <strong>Чорне море</strong> – відпочинок на піщаних пляжах Одеси та Миколаєва.</p>
+    </aside>
+
+    <footer>&copy; 2023 Туризм в Україні. Всі права захищені.</footer>
+  </div>
+
+</body>
+</html>
